@@ -62,7 +62,30 @@ extension NSLabel {
       self.textAlignment = textAlignment
    }
 }
+/**
+ * Style
+ */
 extension NSLabel {
+   /**
+    * set style
+    */
+   public func setStyle(style: NSLabel.Style) {
+      self.drawsBackground = style.backgroundColor != .clear
+      self.backgroundColor = style.backgroundColor
+      self.font = style.font
+      self.isBordered = style.isBordered
+      self.textColor = style.textColor
+      self.textAlignment = style.textAlignment
+      centerVertically()
+   }
+}
+/**
+ * Style
+ */
+extension NSLabel {
+   /**
+    * Fixme: ⚠️️ add border color?
+    */
    public struct Style {
       let textColor: NSColor
       let font: NSFont
@@ -73,9 +96,9 @@ extension NSLabel {
    }
 }
 extension NSLabel.Style {
-   // public static var defaultStyle: NSLabel.Style {
-   //    .init(textColor: .black)
-   // }
+   public static var `default`: NSLabel.Style {
+      .init(textColor: .black, font: .systemFont(ofSize: 20), textAlignment: .center, centerVertically: true, backgroundColor: .clear, isBordered: false)
+   }
 }
 //   open override var cell: NSCell? {get{Swift.print("cell");return super.cell}set{super.cell = newValue}}
 //   open override func drawCell(_ cell: NSCell) {
