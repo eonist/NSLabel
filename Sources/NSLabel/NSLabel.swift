@@ -87,12 +87,12 @@ extension NSLabel {
     * Fixme: ⚠️️ add border color?
     */
    public struct Style {
-      let textColor: NSColor
-      let font: NSFont
-      let textAlignment: NSTextAlignment
-      let centerVertically: Bool
-      let backgroundColor: NSColor
-      let isBordered: Bool
+      public let textColor: NSColor
+      public let font: NSFont
+      public let textAlignment: NSTextAlignment
+      public let centerVertically: Bool
+      public let backgroundColor: NSColor
+      public let isBordered: Bool
    }
 }
 extension NSLabel.Style {
