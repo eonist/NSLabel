@@ -45,6 +45,7 @@ extension NSLabel {
    }
    /**
     * Fixme: ⚠️️ This is not optimal, there could be a better way to do this, maybe look into: baselineOffset attributed string etc
+    * Fixme: ⚠️️ add support for background color
     */
    public func centerVertically() {
       let textHeight = self.attributedStringValue.size().height
@@ -60,6 +61,21 @@ extension NSLabel {
       self.isEnabled = isEnabled
       self.textAlignment = textAlignment
    }
+}
+extension NSLabel {
+   public struct Style {
+      let textColor: NSColor
+      let font: NSFont
+      let textAlignment: NSTextAlignment
+      let centerVertically: Bool
+      let backgroundColor: NSColor
+      let isBordered: Bool
+   }
+}
+extension NSLabel.Style {
+   // public static var defaultStyle: NSLabel.Style {
+   //    .init(textColor: .black)
+   // }
 }
 //   open override var cell: NSCell? {get{Swift.print("cell");return super.cell}set{super.cell = newValue}}
 //   open override func drawCell(_ cell: NSCell) {
